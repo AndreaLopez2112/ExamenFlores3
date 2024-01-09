@@ -1,0 +1,25 @@
+﻿@model ExamenFlores3.Models.ViewModels.IndexViewModel;
+@{
+    Layout = "Layout";
+}
+
+<div class="post">
+    <h2 class="titulo">Bienvenido a Petalos y Flores</h2>
+    <div class="entrada">
+        <p>
+            <strong>Petalos y Flores </strong>, es una página para practicar el manejo de base
+            de datos utilizando MySQL Server y ASP.NET.
+        </p>
+     
+    </div>
+</div>
+<div class="mainMenu">
+    <ul>
+        @foreach(var nombre in Model.FloresNombres)
+        {
+            <li><a href="~/Detalles/@(nombre.Replace(" ","-"))">@nombre</a></li>
+
+        }
+
+    </ul>
+</div>

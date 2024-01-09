@@ -1,0 +1,34 @@
+﻿@model ExamenFlores3.Areas.Admin.Models.ViewModels.AdminIndexViewModel;
+@{
+    Layout = "Layout";
+}
+<h2 class="titulo">LISTA DE FLORES</h2>
+
+<a class="btn" href="~/Admin/Agregar">
+    Agregar flor
+</a>
+
+<div class="entrada">
+
+    <table id="tablaFlores" style="width: 100%;">
+        <tr style="background: pink;">
+
+            <th>Flor</th>
+            <th style="width:40%">Acción</th>
+        </tr>
+        @foreach(var flor in Model.Flores)
+        {
+            <tr>
+                <td>
+                    <img src="~/images/@(flor.Id).jpg" />
+                    @flor.Nombre
+                </td>
+                <td>
+                    <a href="~/Admin/Editar/@(flor.Id)">Editar</a>
+                    <a href="~/Admin/Eliminar/@(flor.Id)">Eliminar</a>
+                </td>
+            </tr>
+        }
+        
+    </table>
+</div>

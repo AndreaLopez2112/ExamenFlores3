@@ -1,0 +1,19 @@
+﻿@model ExamenFlores3.Models.ViewModels.DetallesViewModel;
+@{
+    Layout = "Layout";
+}
+<div class="post">
+    <h2 class="titulo">@Model.Flor.NombreFlor</h2>
+    <div class="entrada">
+        <h4>Procedencia:</h4>
+        <p>@Model.Flor.Origen</p>
+        <h4>Información:</h4>
+        <p>
+            @Model.Flor.Descripcion
+        </p>
+
+        <div id="imagenes">
+            <img title="@Model.Flor.NombreFlor" src="~/images/@(Model.Flor.Id).jpg">
+        </div>
+    </div>
+</div>

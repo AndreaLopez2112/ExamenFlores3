@@ -1,0 +1,23 @@
+﻿@model ExamenFlores3.Areas.Admin.Models.ViewModels.AgregarViewModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "Layout";
+}
+<form method="post" enctype="multipart/form-data" action="~/Admin/Agregar">
+    <h2 class="titulo">Agregar una nueva flor</h2>
+    <br />
+    <div class="entrada">
+
+        <label>Nombre:</label><input asp-for="Flor.NombreFlor" type="text" id="txtNombre" /><br />
+        <label>Origen:</label><input asp-for="Flor.Origen" type="text" id="txtOrigen" /><br />
+        <label>Descripción:</label><textarea asp-for="Flor.Descripcion" rows="5" cols="20" id="txtDescripción" style="width:100%;">
+                        </textarea><br />
+        <input type="file" accept="image/png" asp-for="Foto" /><br />
+        <input type="submit" value="Agregar Flor" />
+        <a href="~/Admin/Agregar"><input type="button" value="Cancelar" /></a>
+        <div class="errores">
+            @Html.ValidationSummary(true)
+        </div>
+    </div>
+
+</form>
